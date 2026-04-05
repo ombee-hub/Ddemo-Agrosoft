@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "demo-site",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "C:\\My Files\\Agrosoft Ltd\\Demo Agrosoft\\serve.bat"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
