@@ -109,6 +109,16 @@ img {
     position: relative;
 }
 
+.has-submenu .arrow {
+    font-size: 0.6em;
+    display: inline-block;
+    transition: transform var(--transition);
+}
+
+.has-submenu:hover .arrow {
+    transform: rotate(180deg);
+}
+
 .submenu {
     position: absolute;
     top: 100%;
