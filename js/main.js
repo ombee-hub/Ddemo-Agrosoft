@@ -72,66 +72,118 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Close panel with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && a11yPanel.classList.contains('active')) {
+        a11yPanel.classList.remove('active');
+        a11yBtn.focus();
+    }
+});
+
+// Accessibility class map
+const classMap = {
+    'high-contrast': 'high-contrast',
+    'large-text': 'large-text',
+    'grayscale': 'grayscale',
+    'highlight-links': 'highlight-links',
+    'big-cursor': 'big-cursor',
+    'line-height': 'line-height-plus',
+    'hide-images': 'hide-images',
+    'disable-animations': 'disable-animations',
+    'dyslexia-font': 'dyslexia-font',
+    'text-spacing': 'text-spacing',
+    'color-saturation': 'color-saturation',
+    'image-captions': 'image-captions',
+    'text-align': 'text-align-left',
+    'dark-mode': 'dark-mode',
+};
+
+// Reverse map for loading settings
+const classToAction = {};
+Object.entries(classMap).forEach(([action, cls]) => {
+    classToAction[cls] = action;
+});
+
+// Conflicting modes — only one filter at a time
+const filterModes = ['high-contrast', 'grayscale', 'color-saturation'];
+
 // Accessibility actions
 a11yOptions.forEach(option => {
     option.addEventListener('click', () => {
         const action = option.dataset.action;
 
         if (action === 'reset') {
-            document.body.className = '';
+            // Remove all accessibility classes
+            Object.values(classMap).forEach(cls => document.body.classList.remove(cls));
             a11yOptions.forEach(opt => opt.classList.remove('active'));
             localStorage.removeItem('a11ySettings');
             return;
         }
 
-        const classMap = {
-            'high-contrast': 'high-contrast',
-            'large-text': 'large-text',
-            'grayscale': 'grayscale',
-            'highlight-links': 'highlight-links',
-            'big-cursor': 'big-cursor',
-            'line-height': 'line-height-plus',
-        };
-
         const className = classMap[action];
         if (!className) return;
 
+        // Handle conflicting filter modes
+        if (filterModes.includes(action)) {
+            filterModes.forEach(mode => {
+                if (mode !== action) {
+                    document.body.classList.remove(classMap[mode]);
+                    const otherBtn = document.querySelector(`.a11y-option[data-action="${mode}"]`);
+                    if (otherBtn) otherBtn.classList.remove('active');
+                }
+            });
+        }
+
         option.classList.toggle('active');
         document.body.classList.toggle(className);
+
+        // Load dyslexia font dynamically
+        if (action === 'dyslexia-font' && document.body.classList.contains('dyslexia-font')) {
+            loadDyslexiaFont();
+        }
 
         // Save settings
         saveA11ySettings();
     });
 });
 
+function loadDyslexiaFont() {
+    if (!document.getElementById('dyslexia-font-link')) {
+        const link = document.createElement('link');
+        link.id = 'dyslexia-font-link';
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.cdnfonts.com/css/opendyslexic';
+        document.head.appendChild(link);
+    }
+}
+
 function saveA11ySettings() {
-    const classes = Array.from(document.body.classList);
-    localStorage.setItem('a11ySettings', JSON.stringify(classes));
+    const activeClasses = Object.values(classMap).filter(cls => document.body.classList.contains(cls));
+    localStorage.setItem('a11ySettings', JSON.stringify(activeClasses));
 }
 
 function loadA11ySettings() {
     const saved = localStorage.getItem('a11ySettings');
     if (saved) {
-        const classes = JSON.parse(saved);
-        classes.forEach(cls => document.body.classList.add(cls));
+        try {
+            const classes = JSON.parse(saved);
+            classes.forEach(cls => {
+                document.body.classList.add(cls);
+                // Load dyslexia font if needed
+                if (cls === 'dyslexia-font') loadDyslexiaFont();
+            });
 
-        // Update button states
-        const classToAction = {
-            'high-contrast': 'high-contrast',
-            'large-text': 'large-text',
-            'grayscale': 'grayscale',
-            'highlight-links': 'highlight-links',
-            'big-cursor': 'big-cursor',
-            'line-height-plus': 'line-height',
-        };
-
-        a11yOptions.forEach(option => {
-            const action = option.dataset.action;
-            const expectedClass = Object.entries(classToAction).find(([, a]) => a === action);
-            if (expectedClass && classes.includes(expectedClass[0])) {
-                option.classList.add('active');
-            }
-        });
+            // Update button active states
+            a11yOptions.forEach(option => {
+                const action = option.dataset.action;
+                const expectedClass = classMap[action];
+                if (expectedClass && classes.includes(expectedClass)) {
+                    option.classList.add('active');
+                }
+            });
+        } catch (e) {
+            localStorage.removeItem('a11ySettings');
+        }
     }
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>יצירת קשר - מפעל שוקולד טוב</title>
+    <title>שוקולד שנראה טוב - מפעל שוקולד טוב</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
                 <ul class="nav-list">
                     <li><a href="about.html">אודות</a></li>
                     <li class="has-submenu">
-                        <a href="index.html#products">שוקולדים <span class="arrow">&#9660;</span></a>
+                        <a href="index.html#products" class="active">שוקולדים <span class="arrow">&#9660;</span></a>
                         <ul class="submenu">
                             <li><a href="chocolate-quality.html">שוקולד איכותי</a></li>
                             <li><a href="chocolate-good.html">שוקולד טוב</a></li>
@@ -41,7 +41,7 @@
                             <li><a href="chocolate-hot.html">שוקולד חם</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html" class="nav-cta active">יצירת קשר</a></li>
+                    <li><a href="contact.html" class="nav-cta">יצירת קשר</a></li>
                 </ul>
             </nav>
         </div>
@@ -50,104 +50,23 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>יצירת קשר</h1>
-            <p>נשמח לשמוע מכם! מלאו את הטופס ונחזור אליכם בהקדם</p>
+            <h1>שוקולד שנראה טוב</h1>
+            <p>כשהמראה והטעם נפגשים</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Product Content -->
+    <section class="inner-content">
         <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <h2>שלחו לנו הודעה</h2>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">שם פרטי <span class="required">*</span></label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">שם משפחה <span class="required">*</span></label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">אימייל <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">טלפון</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">נושא</label>
-                            <select id="subject" name="subject">
-                                <option value="">בחרו נושא...</option>
-                                <option value="general">שאלה כללית</option>
-                                <option value="order">הזמנה</option>
-                                <option value="complaint">תלונה</option>
-                                <option value="cooperation">שיתוף פעולה</option>
-                                <option value="other">אחר</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">הודעה <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">שליחה</button>
-                    </form>
-                    <div class="form-success hidden" id="formSuccess">
-                        <div class="success-icon">&#10003;</div>
-                        <h3>ההודעה נשלחה בהצלחה!</h3>
-                        <p>תודה שפניתם אלינו. נחזור אליכם בהקדם האפשרי.</p>
-                    </div>
+            <div class="product-detail">
+                <div class="product-detail-text">
+                    <h2>מהו שוקולד שנראה טוב?</h2>
+                    <p>שוקולד שנראה טוב הוא מושג המשלב בין אסתטיקה לאיכות. אנו מאמינים שהשוקולד צריך לפנק את העיניים לא פחות מאשר את החיך.</p>
+                    <p>האריזות שלנו מעוצבות בקפידה, והשוקולד עצמו נשמר בטמפרטורה מושלמת לאורך כל שרשרת ההפצה ועד לנקודות המכירה. כך אנו מבטיחים מוצר מושלם שגם טעים וגם נראה מדהים.</p>
+                    <a href="contact.html" class="btn btn-primary">לפרטים נוספים</a>
                 </div>
-
-                <!-- Contact Info Sidebar -->
-                <div class="contact-info-sidebar">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#f1cb57"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        </div>
-                        <h3>כתובת</h3>
-                        <p>דרך רבין 35<br>תל אביב</p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#f1cb57"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        </div>
-                        <h3>טלפון</h3>
-                        <p><a href="tel:1-800-20-20-2000">1-800-20-20-2000</a></p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#f1cb57"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        </div>
-                        <h3>אימייל</h3>
-                        <p><a href="mailto:info@chocolate-tov.co.il">info@chocolate-tov.co.il</a></p>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#f1cb57"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-                        </div>
-                        <h3>שעות פעילות</h3>
-                        <p>ראשון - חמישי: 08:00 - 17:00<br>שישי: 08:00 - 13:00</p>
-                    </div>
-
-                    <!-- Map Placeholder -->
-                    <div class="map-placeholder">
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=400&h=250&fit=crop&q=80" alt="מפה - מפעל שוקולד טוב">
-                        <div class="map-overlay">
-                            <span>דרך רבין 35, תל אביב</span>
-                        </div>
-                    </div>
+                <div class="product-detail-image">
+                    <img src="https://images.unsplash.com/photo-1606913084603-3e7702b01627?w=600&h=450&fit=crop&q=80" alt="שוקולד שנראה טוב">
                 </div>
             </div>
         </div>
@@ -179,7 +98,7 @@
                     <div class="sitemap-col">
                         <h4>מידע</h4>
                         <ul>
-                            <li><a href="contact.html">יצירת קשר</a></li>
+                            <li><a href="contact.html" class="nav-cta">יצירת קשר</a></li>
                             <li><a href="privacy.html">מדיניות פרטיות</a></li>
                         </ul>
                     </div>
@@ -251,18 +170,5 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script>
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                contactForm.classList.add('hidden');
-                formSuccess.classList.remove('hidden');
-            });
-        }
-    </script>
 </body>
 </html>
