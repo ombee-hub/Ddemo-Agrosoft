@@ -18,15 +18,18 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Mobile submenu toggle
+// Mobile/Tablet submenu toggle
 submenuParents.forEach(parent => {
-    parent.addEventListener('click', (e) => {
+    const link = parent.querySelector(':scope > a');
+    link.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-            const link = parent.querySelector('a');
-            if (e.target === link) {
-                e.preventDefault();
-                parent.classList.toggle('open');
-            }
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            // Close other open submenus
+            submenuParents.forEach(other => {
+                if (other !== parent) other.classList.remove('open');
+            });
+            parent.classList.toggle('open');
         }
     });
 });
