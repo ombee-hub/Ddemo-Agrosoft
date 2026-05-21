@@ -1,0 +1,6 @@
+# Claude Code workspace
+.claude/
+
+# Local backup archives
+*.zip
+*.tar.gz

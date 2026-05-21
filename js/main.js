@@ -39,20 +39,25 @@ const cookieBanner = document.getElementById('cookieBanner');
 const cookieAccept = document.getElementById('cookieAccept');
 const cookieDecline = document.getElementById('cookieDecline');
 
-// Check if user already made a choice
-if (localStorage.getItem('cookieConsent')) {
-    cookieBanner.classList.add('hidden');
+if (cookieBanner) {
+    if (localStorage.getItem('cookieConsent')) {
+        cookieBanner.classList.add('hidden');
+    }
+
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('hidden');
+        });
+    }
+
+    if (cookieDecline) {
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.add('hidden');
+        });
+    }
 }
-
-cookieAccept.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    cookieBanner.classList.add('hidden');
-});
-
-cookieDecline.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    cookieBanner.classList.add('hidden');
-});
 
 // ===== Accessibility Panel =====
 const a11yBtn = document.getElementById('accessibilityBtn');

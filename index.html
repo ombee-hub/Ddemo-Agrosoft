@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מפעל שוקולד טוב</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,7 @@
     <header class="header">
         <div class="container header-inner">
             <a href="#" class="logo">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="22" stroke="#f1cb57" stroke-width="2" fill="none"/>
-                    <path d="M16 32c0-6 4-12 8-16 4 4 8 10 8 16s-4 8-8 8-8-2-8-8z" fill="#f1cb57"/>
-                    <circle cx="24" cy="28" r="4" fill="#311b11"/>
-                </svg>
-                <span class="logo-text">שוקולד טוב<span class="logo-subtitle">השוקולד הישראלי הכי איכותי</span></span>
+                <img src="images/Good%20chocolate.png" alt="שוקולד טוב" class="logo-img">
             </a>
 
             <button class="hamburger" aria-label="תפריט" aria-expanded="false">
@@ -50,6 +46,18 @@
                             <a href="chocolate-hot.html" class="megamenu-item">
                                 <img src="https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=300&h=200&fit=crop&q=80" alt="שוקולד חם">
                                 <span>שוקולד חם</span>
+                            </a>
+                            <a href="chocolate-textures.html" class="megamenu-item">
+                                <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=200&fit=crop&q=80" alt="מרקמי שוקולד">
+                                <span>מרקמי שוקולד</span>
+                            </a>
+                            <a href="chocolate-flavors.html" class="megamenu-item">
+                                <img src="https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?w=300&h=200&fit=crop&q=80" alt="טעמים חדשניים">
+                                <span>טעמים חדשניים</span>
+                            </a>
+                            <a href="chocolate-origins.html" class="megamenu-item">
+                                <img src="https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?w=300&h=200&fit=crop&q=80" alt="מקורות הקקאו">
+                                <span>מקורות הקקאו</span>
                             </a>
                         </div>
                     </li>
@@ -143,6 +151,14 @@
                         </ul>
                     </div>
                     <div class="sitemap-col">
+                        <h4>תכנים</h4>
+                        <ul>
+                            <li><a href="chocolate-textures.html">מרקמי שוקולד</a></li>
+                            <li><a href="chocolate-flavors.html">טעמים חדשניים</a></li>
+                            <li><a href="chocolate-origins.html">מקורות הקקאו</a></li>
+                        </ul>
+                    </div>
+                    <div class="sitemap-col">
                         <h4>מידע</h4>
                         <ul>
                             <li><a href="contact.html" class="nav-cta">יצירת קשר</a></li>
@@ -154,12 +170,7 @@
             <div class="footer-grid">
                 <div class="footer-info">
                     <a href="#" class="logo footer-logo">
-                        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="22" stroke="#f1cb57" stroke-width="2" fill="none"/>
-                            <path d="M16 32c0-6 4-12 8-16 4 4 8 10 8 16s-4 8-8 8-8-2-8-8z" fill="#f1cb57"/>
-                            <circle cx="24" cy="28" r="4" fill="#311b11"/>
-                        </svg>
-                        <span class="logo-text">שוקולד טוב<span class="logo-subtitle">השוקולד הישראלי הכי איכותי</span></span>
+                        <img src="images/Good%20chocolate.png" alt="שוקולד טוב" class="logo-img">
                     </a>
                     <p class="footer-copyright">&copy; 2026 כל הזכויות שמורות למפעל שוקולד טוב</p>
                 </div>
@@ -182,7 +193,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>עיצוב ובנייה ע"י <a href="https://ombee.co.il" target="_blank">OMBee</a></p>
+                <a href="https://ombee.co.il" target="_blank" rel="noopener" class="ombee-credit">
+                    <span>עיצוב ובנייה ע"י</span>
+                    <img src="images/ombee-logo.png" alt="OMBee" class="ombee-logo">
+                </a>
             </div>
         </div>
     </footer>
@@ -215,65 +229,70 @@
         </div>
         <div class="a11y-options">
             <button class="a11y-option" data-action="high-contrast">
-                <span class="a11y-icon">&#9681;</span>
-                <span>ניגודיות גבוהה</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></span>
+                <span class="a11y-label">ניגודיות גבוהה</span>
             </button>
             <button class="a11y-option" data-action="grayscale">
-                <span class="a11y-icon">&#9790;</span>
-                <span>גווני אפור</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 8h18M3 12h18M3 16h18"/></svg></span>
+                <span class="a11y-label">גווני אפור</span>
             </button>
             <button class="a11y-option" data-action="dark-mode">
-                <span class="a11y-icon">&#9789;</span>
-                <span>מצב חשוך</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                <span class="a11y-label">מצב חשוך</span>
             </button>
             <button class="a11y-option" data-action="large-text">
-                <span class="a11y-icon">A+</span>
-                <span>הגדלת טקסט</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="currentColor" direction="ltr"><text x="2" y="17" font-family="Heebo,sans-serif" font-size="14" font-weight="700" direction="ltr">T</text><text x="11" y="20" font-family="Heebo,sans-serif" font-size="20" font-weight="700" direction="ltr">T</text></svg></span>
+                <span class="a11y-label">הגדלת טקסט</span>
             </button>
             <button class="a11y-option" data-action="line-height">
-                <span class="a11y-icon">&#8661;</span>
-                <span>ריווח שורות</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h12M9 12h12M9 18h12M3 6v12M1 8l2-2 2 2M1 16l2 2 2-2"/></svg></span>
+                <span class="a11y-label">ריווח שורות</span>
             </button>
             <button class="a11y-option" data-action="text-spacing">
-                <span class="a11y-icon">&#8596;</span>
-                <span>ריווח טקסט</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8h6M9 12h6M9 16h6M5 10l-2 2 2 2M19 10l2 2-2 2"/></svg></span>
+                <span class="a11y-label">ריווח טקסט</span>
             </button>
             <button class="a11y-option" data-action="dyslexia-font">
-                <span class="a11y-icon">Aa</span>
-                <span>גופן דיסלקציה</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="currentColor" direction="ltr"><text x="2" y="18" font-family="serif" font-size="16" font-weight="700" direction="ltr">D</text><text x="13" y="18" font-family="serif" font-size="16" font-weight="700" direction="ltr">f</text></svg></span>
+                <span class="a11y-label">גופן דיסלקציה</span>
             </button>
             <button class="a11y-option" data-action="text-align">
-                <span class="a11y-icon">&#8676;</span>
-                <span>יישור שמאלה</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 10h12M3 14h18M3 18h12"/></svg></span>
+                <span class="a11y-label">יישור שמאלה</span>
             </button>
             <button class="a11y-option" data-action="highlight-links">
-                <span class="a11y-icon">&#128279;</span>
-                <span>הדגשת קישורים</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                <span class="a11y-label">הדגשת קישורים</span>
             </button>
             <button class="a11y-option" data-action="big-cursor">
-                <span class="a11y-icon">&#9757;</span>
-                <span>סמן מוגדל</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l7 16 2-7 7-2z"/></svg></span>
+                <span class="a11y-label">סמן מוגדל</span>
             </button>
             <button class="a11y-option" data-action="hide-images">
-                <span class="a11y-icon">&#128247;</span>
-                <span>הסתרת תמונות</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="1.5"/><path d="M21 15l-5-5L5 21"/><path d="M3 3l18 18"/></svg></span>
+                <span class="a11y-label">הסתרת תמונות</span>
             </button>
             <button class="a11y-option" data-action="disable-animations">
-                <span class="a11y-icon">&#9724;</span>
-                <span>ביטול אנימציות</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></span>
+                <span class="a11y-label">ביטול אנימציות</span>
             </button>
             <button class="a11y-option" data-action="color-saturation">
-                <span class="a11y-icon">&#127752;</span>
-                <span>רוויית צבע</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+                <span class="a11y-label">רוויית צבע</span>
             </button>
             <button class="a11y-option" data-action="image-captions">
-                <span class="a11y-icon">&#128196;</span>
-                <span>כיתוב תמונות</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h5"/></svg></span>
+                <span class="a11y-label">כיתוב תמונות</span>
             </button>
             <button class="a11y-option a11y-reset" data-action="reset">
-                <span class="a11y-icon">&#8634;</span>
-                <span>איפוס הכל</span>
+                <span class="a11y-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 14.85-6.85L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-14.85 6.85L3 16"/><path d="M3 21v-5h5"/></svg></span>
+                <span class="a11y-label">איפוס כל ההגדרות</span>
             </button>
+            <div class="a11y-links">
+                <a href="accessibility.html">הצהרת נגישות</a>
+                <span class="a11y-links-sep" aria-hidden="true">·</span>
+                <a href="privacy.html">מדיניות פרטיות</a>
+            </div>
         </div>
     </div>
 
